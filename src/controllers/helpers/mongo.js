@@ -7,7 +7,7 @@ const mongo = () => {
   const DB_USERNAME = process.env.DB_USERNAME || '';
   const DB_PASSWORD = process.env.DB_PASSWORD || '';
   const dbName = 'portal';
-  const url = `mongodb://${DB_USERNAME.length ? `${DB_USERNAME}:${DB_PASSWORD}@` : ``}${DB_HOST}:${DB_PORT}`;
+  const url = `mongodb+srv://${DB_USERNAME.length ? `${DB_USERNAME}:${DB_PASSWORD}` : ``}@cluster0.lfttz.mongodb.net/${dbName}?retryWrites=true&w=majority`;
 
   const createConnection = async () => {
     debug('request for connection sent');
